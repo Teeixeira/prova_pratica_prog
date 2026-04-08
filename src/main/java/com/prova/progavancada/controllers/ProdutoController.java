@@ -45,11 +45,11 @@ public class ProdutoController {
         return ResponseEntity.ok().body(produto);
     }
 
-    @PutMapping
-    public ResponseEntity<ProdutoModel> update(@RequestBody ProdutoModel produto){
-        ProdutoModel produtoModel = produtoService.save(produto);
+    @PutMapping("/{id}")
+    public  ResponseEntity<ProdutoModel> update(@PathVariable Long id, @RequestBody ProdutoModel produtoModel){
+        ProdutoModel produto = produtoService.save(produtoModel);
 
-        return ResponseEntity.ok().body(produtoModel);
+        return ResponseEntity.ok().body(produto);
     }
 
     @DeleteMapping("/{id}")
