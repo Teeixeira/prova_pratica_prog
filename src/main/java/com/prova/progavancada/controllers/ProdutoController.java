@@ -46,7 +46,8 @@ public class ProdutoController {
     }
 
     @PutMapping("/{id}")
-    public  ResponseEntity<ProdutoModel> update(@PathVariable Long id, @RequestBody ProdutoModel produtoModel){
+    public ResponseEntity<ProdutoModel> update(@PathVariable Long id, @RequestBody ProdutoModel produtoModel){
+        produtoModel.setId(id);
         ProdutoModel produto = produtoService.save(produtoModel);
 
         return ResponseEntity.ok().body(produto);
@@ -59,4 +60,3 @@ public class ProdutoController {
         return ResponseEntity.noContent().build();
     }
 }
-
