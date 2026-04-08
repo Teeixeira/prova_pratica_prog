@@ -19,6 +19,10 @@ public class ProdutoService {
         return produtoRepository.save(produtoModel);
     }
 
+    public ProdutoModel update(ProdutoModel produtoModel) {
+        return produtoRepository.save(produtoModel);
+    }
+
     public List<ProdutoModel> findAll(){
         return produtoRepository.findAll();
     }
